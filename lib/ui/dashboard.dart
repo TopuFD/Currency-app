@@ -1,6 +1,7 @@
 import 'package:currency_app/ui/exchange_page.dart';
 import 'package:currency_app/ui/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -23,8 +24,8 @@ class _DashboardState extends State<Dashboard> {
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           selectedItemColor: Colors.blue,
-          selectedFontSize: 17,
-          elevation: 10,
+          selectedFontSize: 17.sp,
+          elevation: 10.h,
           onTap: (value) {
             setState(() {
               _currentIndex = value;

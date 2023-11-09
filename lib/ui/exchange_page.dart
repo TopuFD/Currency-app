@@ -3,6 +3,7 @@ import 'package:country_currency_pickers/country_picker_dropdown.dart';
 import 'package:country_currency_pickers/utils/utils.dart';
 import 'package:currency_app/service/api_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExchangePage extends StatefulWidget {
   const ExchangePage({super.key});
@@ -20,8 +21,8 @@ class _ExchangePageState extends State<ExchangePage> {
 
   Widget dropdownItem(Country country) => Row(children: [
         CountryPickerUtils.getDefaultFlagImage(country),
-        const SizedBox(
-          width: 8,
+        SizedBox(
+          width: 8.h,
         ),
         Text("${country.currencyName}")
       ]);
@@ -34,16 +35,16 @@ class _ExchangePageState extends State<ExchangePage> {
         child: Center(
           child: Column(
             children: [
-              const Text(
+              Text(
                 "Base Currency",
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(fontSize: 20.sp, color: Colors.white),
               ),
-              const SizedBox(
-                height: 8,
+              SizedBox(
+                height: 8.h,
               ),
               Container(
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(8),
+                margin: const EdgeInsets.all(10).w,
+                padding: const EdgeInsets.all(8).w,
                 decoration: const BoxDecoration(color: Colors.white),
                 child: CountryPickerDropdown(
                   initialValue: "us",
@@ -59,29 +60,29 @@ class _ExchangePageState extends State<ExchangePage> {
                 controller: userText,
                 keyboardType: TextInputType.number,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 30,color: Colors.white),
+                style: TextStyle(fontSize: 30.sp,color: Colors.white),
                 decoration: InputDecoration(
                   hintText: "Write your value",
-                  hintStyle: const TextStyle(fontSize: 30, color: Colors.white),
+                  hintStyle: TextStyle(fontSize: 30.sp, color: Colors.white),
                   filled: true,
                   fillColor: Colors.white.withAlpha(80),
                   border:
-                      OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+                      OutlineInputBorder(borderRadius: BorderRadius.circular(50.r)),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 10.h,
               ),
-              const Text(
+              Text(
                 "Change Currency",
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(fontSize: 20.sp, color: Colors.white),
               ),
-              const SizedBox(
-                height: 8,
+              SizedBox(
+                height: 8.h,
               ),
               Container(
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(8),
+                margin: const EdgeInsets.all(10).w,
+                padding: const EdgeInsets.all(8).w,
                 decoration: const BoxDecoration(color: Colors.white),
                 child: CountryPickerDropdown(
                   initialValue: "bd",
@@ -98,8 +99,8 @@ class _ExchangePageState extends State<ExchangePage> {
                     apiData(userText.text);
                   },
                   child: const Text("Click to change")),
-              const SizedBox(
-                height: 8,
+              SizedBox(
+                height: 8.h,
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,22 +108,22 @@ class _ExchangePageState extends State<ExchangePage> {
                 children: [
                   const Text("Total:",style: TextStyle(fontSize: 30,color: Colors.white),),
                   Container(
-                    height: 100,
-                    width: 200,
+                    height: 100.h,
+                    width: 200.w,
                     decoration: BoxDecoration(
                       color: Colors.white.withAlpha(88),
-                      borderRadius: BorderRadius.circular(15)
+                      borderRadius: BorderRadius.circular(15.r)
                     ),
                     child: Center(
                         child: Text(
                       totalValue,
-                      style: const TextStyle(
-                          fontSize: 40,
+                      style: TextStyle(
+                          fontSize: 40.sp,
                           color: Colors.white),
                     )),
                   ),
-                  const SizedBox(width: 5,),
-                  Text(targetCountry,style: const TextStyle(fontSize: 30,color: Colors.white),)
+                  SizedBox(width: 5.w,),
+                  Text(targetCountry,style: TextStyle(fontSize: 30.sp,color: Colors.white),)
                 ],
               )
             ],

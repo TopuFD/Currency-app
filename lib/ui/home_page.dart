@@ -5,6 +5,7 @@ import 'package:currency_app/service/api_service.dart';
 import 'package:currency_app/ui/component/all_currency.dart';
 import 'package:currency_app/ui/reusable/reusable_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,8 +21,8 @@ String selectedCurrency = "USD";
 class _HomePageState extends State<HomePage> {
   Widget dropdownItem(Country country) => Row(children: [
         CountryPickerUtils.getDefaultFlagImage(country),
-        const SizedBox(
-          width: 8,
+        SizedBox(
+          width: 8.w,
         ),
         Text(
           "${country.currencyName}",
@@ -34,18 +35,18 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          const Text(
+          Text(
             "Base Currency",
-            style: TextStyle(fontSize: 25, color: Colors.purple),
+            style: TextStyle(fontSize: 25.sp, color: Colors.purple),
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 10.h,
           ),
           Container(
-            margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.all(10).w,
+            padding: const EdgeInsets.all(8).w,
             decoration: BoxDecoration(
-                color: Colors.white, borderRadius: BorderRadius.circular(15)),
+                color: Colors.white, borderRadius: BorderRadius.circular(15.r)),
             child: CountryPickerDropdown(
               
               initialValue: "us",
@@ -57,16 +58,16 @@ class _HomePageState extends State<HomePage> {
               },
             ),
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 10.h,
           ),
-          const Text(
+          Text(
             "All currency",
             style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+                fontSize: 20.sp, color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(
-            height: 8,
+          SizedBox(
+            height: 8.h,
           ),
           FutureBuilder(
             builder: (context, snapshot) {

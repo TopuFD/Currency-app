@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class ReWidget{
@@ -10,7 +11,7 @@ class ReWidget{
         timeInSecForIosWeb: 1,
         backgroundColor: Colors.white,
         textColor: Colors.red,
-        fontSize: 20.0,
+        fontSize: 20.0.sp,
         
     );
   }
